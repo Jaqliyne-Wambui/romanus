@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Mission Control</title>
+    <style>
+        /* This is the CSS - The "Fancy" part! */
+        body {
+            background-color: #0a0a12;
+            color: #00ffcc;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .dashboard {
+            border: 2px solid #00ffcc;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px #00ffcc, inset 0 0 10px #00ffcc;
+            background: rgba(0, 255, 204, 0.05);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px #ff0055;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+
+        .button-zone {
+            margin-top: 30px;
+        }
+
+        /* Fancy Glowing Button */
+        .btn {
+            background: transparent;
+            color: #00ffcc;
+            border: 1px solid #00ffcc;
+            padding: 15px 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        .btn:hover {
+            background: #00ffcc;
+            color: #0a0a12;
+            box-shadow: 0 0 30px #00ffcc;
+            transform: scale(1.1);
+        }
+
+        /* Floating Stars Animation */
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.5;
+            animation: twinkle 2s infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard">
+        <div class="status">SYSTEM STATUS: ONLINE</div>
+        <h1>COMMANDER [YOUR NAME]</h1>
+        <p>Welcome to my first website on GitHub.</p>
+        
+        <div class="button-zone">
+            <button class="btn" onclick="alert('Launching Rockets!')">Initiate Launch</button>
+        </div>
+    </div>
+
+    <script>
+        for (let i = 0; i < 50; i++) {
+            let star = document.createElement('div');
+            star.className = 'star';
+            let size = Math.random() * 3 + 'px';
+            star.style.width = size;
+            star.style.height = size;
+            star.style.top = Math.random() * 100 + 'vh';
+            star.style.left = Math.random() * 100 + 'vw';
+            document.body.appendChild(star);
+        }
+    </script>
+</body>
+</html>
